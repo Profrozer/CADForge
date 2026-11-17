@@ -1,0 +1,224 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 380" width="100%" role="img" aria-label="CADForge — Prompt to Parametric Solid">
+  <defs>
+    <linearGradient id="bgBase" x1="0" y1="0" x2="0.6" y2="1">
+      <stop offset="0%" stop-color="#060d1f"/>
+      <stop offset="60%" stop-color="#060b18"/>
+      <stop offset="100%" stop-color="#04080f"/>
+    </linearGradient>
+    <radialGradient id="glow1" cx="72%" cy="0%" r="60%">
+      <stop offset="0%" stop-color="#1e4d9e" stop-opacity="0.38"/>
+      <stop offset="100%" stop-color="#060b18" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glow2" cx="0%" cy="100%" r="55%">
+      <stop offset="0%" stop-color="#0e2f6b" stop-opacity="0.28"/>
+      <stop offset="100%" stop-color="#060b18" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="partGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#67e0ff" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#060b18" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#67e0ff" stroke-opacity="0.032" stroke-width="1"/>
+    </pattern>
+    <linearGradient id="faceTop" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#a8d8f0" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#4a9fd4" stop-opacity="0.75"/>
+    </linearGradient>
+    <linearGradient id="faceRight" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2a6cb5" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#0d1e40" stop-opacity="0.9"/>
+    </linearGradient>
+    <linearGradient id="faceFront" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#173060" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#090f22" stop-opacity="0.98"/>
+    </linearGradient>
+    <linearGradient id="armTop" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#7ec8e8" stop-opacity="0.88"/>
+      <stop offset="100%" stop-color="#3a85c0" stop-opacity="0.7"/>
+    </linearGradient>
+    <filter id="partGlowFilter" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="14" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="lineGlow">
+      <feGaussianBlur stdDeviation="2.5" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="textGlow">
+      <feGaussianBlur stdDeviation="8" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="380" fill="url(#bgBase)"/>
+  <rect width="1200" height="380" fill="url(#glow1)"/>
+  <rect width="1200" height="380" fill="url(#glow2)"/>
+  <rect width="1200" height="380" fill="url(#grid)"/>
+
+  <!-- Subtle horizontal scan lines -->
+  <rect width="1200" height="380" fill="none" stroke="#67e0ff" stroke-opacity="0.012" stroke-width="0"
+        style="background: repeating-linear-gradient(0deg, transparent, transparent 3px, rgba(103,224,255,0.015) 4px)"/>
+
+  <!-- HUD corner brackets — outer -->
+  <g stroke="#67e0ff" stroke-opacity="0.55" stroke-width="1.5" fill="none" filter="url(#lineGlow)">
+    <path d="M 16 16 L 16 44 M 16 16 L 44 16"/>
+    <path d="M 1184 16 L 1184 44 M 1184 16 L 1156 16"/>
+    <path d="M 16 364 L 16 336 M 16 364 L 44 364"/>
+    <path d="M 1184 364 L 1184 336 M 1184 364 L 1156 364"/>
+  </g>
+  <!-- Inner tick marks -->
+  <g stroke="#67e0ff" stroke-opacity="0.2" stroke-width="1" fill="none">
+    <path d="M 16 190 L 26 190 M 1184 190 L 1174 190"/>
+    <path d="M 600 16 L 600 26 M 600 364 L 600 354"/>
+  </g>
+
+  <!-- ===== RIGHT SIDE: ISOMETRIC PART ===== -->
+  <!-- Ambient glow -->
+  <ellipse cx="960" cy="200" rx="180" ry="120" fill="url(#partGlow)"/>
+
+  <!-- Isometric L-bracket: origin at (960, 220) -->
+  <!-- Base horizontal arm -->
+  <!-- Top face -->
+  <polygon points="820,185 960,112 1040,158 900,231" fill="url(#faceTop)" filter="url(#partGlowFilter)"/>
+  <!-- Right face -->
+  <polygon points="960,112 1040,158 1040,186 960,140" fill="url(#faceRight)"/>
+  <!-- Front face -->
+  <polygon points="820,185 900,231 900,259 820,213" fill="url(#faceFront)"/>
+
+  <!-- Vertical arm -->
+  <!-- Top face -->
+  <polygon points="820,98 870,72 950,116 900,142" fill="url(#armTop)" filter="url(#partGlowFilter)"/>
+  <!-- Right face -->
+  <polygon points="870,72 950,116 950,144 870,100" fill="url(#faceRight)"/>
+  <!-- Front face -->
+  <polygon points="820,98 900,142 900,231 820,185" fill="url(#faceFront)"/>
+
+  <!-- Edge highlights -->
+  <g stroke="#67e0ff" stroke-opacity="0.6" stroke-width="1.2" fill="none" filter="url(#lineGlow)">
+    <!-- Top edges horizontal arm -->
+    <polyline points="820,185 960,112 1040,158"/>
+    <!-- Top edge vertical arm -->
+    <line x1="820" y1="98" x2="870" y2="72"/>
+    <line x1="870" y1="72" x2="950" y2="116"/>
+    <line x1="950" y1="116" x2="960" y2="112"/>
+    <!-- Vertical inner corner line -->
+    <line x1="820" y1="98" x2="820" y2="185"/>
+    <line x1="900" y1="142" x2="900" y2="231"/>
+  </g>
+
+  <!-- Bolt holes — top face of horizontal arm -->
+  <g filter="url(#lineGlow)">
+    <ellipse cx="897" cy="194" rx="10" ry="6.5" fill="#060b18" fill-opacity="0.95" stroke="#67e0ff" stroke-opacity="0.55" stroke-width="1.2"/>
+    <ellipse cx="968" cy="157" rx="10" ry="6.5" fill="#060b18" fill-opacity="0.95" stroke="#67e0ff" stroke-opacity="0.55" stroke-width="1.2"/>
+  </g>
+
+  <!-- Fillet indicator arc on corner -->
+  <path d="M 1035,162 A 12,8 0 0 1 1044,154" stroke="#f5b85c" stroke-opacity="0.6" stroke-width="1" fill="none"/>
+
+  <!-- Axis lines -->
+  <g filter="url(#lineGlow)">
+    <!-- Y axis (up) -->
+    <line x1="820" y1="185" x2="820" y2="90" stroke="#39ff6e" stroke-width="1.5" stroke-opacity="0.85"/>
+    <polygon points="820,87 816,97 824,97" fill="#39ff6e" fill-opacity="0.85"/>
+    <text x="826" y="94" font-family="monospace" font-size="9" fill="#39ff6e" fill-opacity="0.7">Y</text>
+    <!-- X axis -->
+    <line x1="820" y1="185" x2="920" y2="130" stroke="#ff6b6b" stroke-width="1.5" stroke-opacity="0.7"/>
+    <polygon points="921,128 912,129 916,137" fill="#ff6b6b" fill-opacity="0.7"/>
+    <text x="923" y="130" font-family="monospace" font-size="9" fill="#ff6b6b" fill-opacity="0.7">X</text>
+    <!-- Z axis -->
+    <line x1="820" y1="185" x2="820" y2="260" stroke="#6b8fff" stroke-width="1.5" stroke-opacity="0.6"/>
+    <text x="826" y="264" font-family="monospace" font-size="9" fill="#6b8fff" fill-opacity="0.6">Z</text>
+  </g>
+
+  <!-- Dimension annotations -->
+  <g stroke="#f5b85c" stroke-opacity="0.5" stroke-width="0.8" fill="none">
+    <!-- 80mm width -->
+    <line x1="820" y1="275" x2="1040" y2="275"/>
+    <line x1="820" y1="270" x2="820" y2="280"/>
+    <line x1="1040" y1="270" x2="1040" y2="280"/>
+    <!-- 60mm height -->
+    <line x1="1060" y1="116" x2="1060" y2="186"/>
+    <line x1="1055" y1="116" x2="1065" y2="116"/>
+    <line x1="1055" y1="186" x2="1065" y2="186"/>
+  </g>
+  <text x="930" y="292" text-anchor="middle" font-family="'Courier New', monospace" font-size="10" fill="#f5b85c" fill-opacity="0.7" letter-spacing="1">80 mm</text>
+  <text x="1082" y="155" text-anchor="middle" font-family="'Courier New', monospace" font-size="10" fill="#f5b85c" fill-opacity="0.7" letter-spacing="1" transform="rotate(90, 1082, 155)">60 mm</text>
+  <text x="988" y="292" text-anchor="middle" font-family="'Courier New', monospace" font-size="9" fill="#f5b85c" fill-opacity="0.45">⌀6 × 2</text>
+
+  <!-- Pipeline flow dots on right edge -->
+  <g fill="#67e0ff">
+    <circle cx="1155" cy="120" r="2.5" fill-opacity="0.8"/>
+    <circle cx="1155" cy="150" r="2.5" fill-opacity="0.55"/>
+    <circle cx="1155" cy="180" r="2.5" fill-opacity="0.35"/>
+    <circle cx="1155" cy="210" r="2" fill-opacity="0.2"/>
+  </g>
+  <g font-family="'Courier New', monospace" font-size="8" fill="#67e0ff" fill-opacity="0.45" letter-spacing="1">
+    <text x="1163" y="123">SPEC</text>
+    <text x="1163" y="153">CODE</text>
+    <text x="1163" y="183">EXEC</text>
+    <text x="1163" y="213">SOLID</text>
+  </g>
+  <line x1="1155" y1="123" x2="1155" y2="207" stroke="#67e0ff" stroke-opacity="0.2" stroke-width="1" stroke-dasharray="2 4"/>
+
+  <!-- ===== LEFT SIDE: TYPOGRAPHY ===== -->
+
+  <!-- Eyebrow label -->
+  <text x="64" y="88" font-family="'Courier New', monospace" font-size="10" letter-spacing="5" fill="#67e0ff" fill-opacity="0.6">PROMPT-TO-CAD GENERATOR</text>
+
+  <!-- Ghost/blur layer for wordmark glow -->
+  <text x="58" y="178" font-family="'Courier New', monospace" font-size="100" font-weight="700" fill="#67e0ff" fill-opacity="0.06" filter="url(#textGlow)">CADFORGE</text>
+
+  <!-- Main wordmark — split coloring -->
+  <text x="60" y="176" font-family="'Courier New', monospace" font-size="100" font-weight="700" letter-spacing="-3" fill="none" stroke="#d9e4f5" stroke-width="0.5" stroke-opacity="0.15">CADFORGE</text>
+  <text x="60" y="176" font-family="'Courier New', monospace" font-size="100" font-weight="700" letter-spacing="-3" fill="#d9e4f5">CAD</text>
+  <text x="298" y="176" font-family="'Courier New', monospace" font-size="100" font-weight="700" letter-spacing="-3" fill="#67e0ff">FORGE</text>
+
+  <!-- Tagline -->
+  <text x="64" y="210" font-family="'Courier New', monospace" font-size="13.5" fill="#6e80a3" letter-spacing="0.5">Describe a part. Get real parametric geometry, instantly.</text>
+
+  <!-- Divider line -->
+  <line x1="64" y1="232" x2="560" y2="232" stroke="#67e0ff" stroke-opacity="0.12" stroke-width="1"/>
+
+  <!-- Feature row -->
+  <g font-family="'Courier New', monospace" font-size="10" letter-spacing="1.5">
+    <!-- CadQuery -->
+    <rect x="64" y="247" width="104" height="24" rx="5" fill="rgba(103,224,255,0.04)" stroke="#67e0ff" stroke-opacity="0.22" stroke-width="1"/>
+    <text x="116" y="263" text-anchor="middle" fill="#67e0ff" fill-opacity="0.75">CADQUERY</text>
+
+    <!-- OpenCASCADE -->
+    <rect x="178" y="247" width="126" height="24" rx="5" fill="rgba(103,224,255,0.04)" stroke="#67e0ff" stroke-opacity="0.22" stroke-width="1"/>
+    <text x="241" y="263" text-anchor="middle" fill="#67e0ff" fill-opacity="0.75">OPENCASCADE</text>
+
+    <!-- Three.js -->
+    <rect x="314" y="247" width="90" height="24" rx="5" fill="rgba(103,224,255,0.04)" stroke="#67e0ff" stroke-opacity="0.22" stroke-width="1"/>
+    <text x="359" y="263" text-anchor="middle" fill="#67e0ff" fill-opacity="0.75">THREE.JS</text>
+
+    <!-- Exports -->
+    <rect x="414" y="247" width="136" height="24" rx="5" fill="rgba(245,184,92,0.05)" stroke="#f5b85c" stroke-opacity="0.3" stroke-width="1"/>
+    <text x="482" y="263" text-anchor="middle" fill="#f5b85c" fill-opacity="0.8">STEP · STL · DXF</text>
+  </g>
+
+  <!-- Provider row -->
+  <text x="64" y="308" font-family="'Courier New', monospace" font-size="9.5" letter-spacing="2.5" fill="#6e80a3" fill-opacity="0.6">PROVIDERS</text>
+  <line x1="138" y1="305" x2="555" y2="305" stroke="#6e80a3" stroke-opacity="0.15" stroke-width="1"/>
+
+  <g font-family="'Courier New', monospace" font-size="10" fill="#d9e4f5" fill-opacity="0.45" letter-spacing="0.5">
+    <text x="64" y="326">Claude</text>
+    <text x="122" y="326" fill="#6e80a3" fill-opacity="0.35">·</text>
+    <text x="134" y="326">OpenAI</text>
+    <text x="198" y="326" fill="#6e80a3" fill-opacity="0.35">·</text>
+    <text x="210" y="326">Codex</text>
+    <text x="262" y="326" fill="#6e80a3" fill-opacity="0.35">·</text>
+    <text x="274" y="326">GLM</text>
+    <text x="309" y="326" fill="#6e80a3" fill-opacity="0.35">·</text>
+    <text x="321" y="326">NVIDIA NIM</text>
+    <text x="407" y="326" fill="#6e80a3" fill-opacity="0.35">·</text>
+    <text x="419" y="326">Ollama</text>
+  </g>
+
+  <!-- No API key badge -->
+  <rect x="64" y="344" width="148" height="20" rx="4" fill="rgba(57,255,110,0.06)" stroke="#39ff6e" stroke-opacity="0.3" stroke-width="1"/>
+  <circle cx="79" cy="354" r="3" fill="#39ff6e" fill-opacity="0.7"/>
+  <text x="88" y="358" font-family="'Courier New', monospace" font-size="9" fill="#39ff6e" fill-opacity="0.75" letter-spacing="1">WORKS OFFLINE (MOCK)</text>
+</svg>
