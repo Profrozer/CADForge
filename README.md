@@ -19,11 +19,11 @@
 
 ---
 
-##  Overview
+## Overview
 
 **CADForge** bridges the gap between conversational AI and high-precision mechanical engineering. Rather than synthesizing coarse polyhedral meshes or point clouds, CADForge interprets plain-English requests into structured geometric constraints, generates production-grade [CadQuery](https://cadquery.readthedocs.io/) Python code, executes it inside an isolated subprocess against **OpenCASCADE**, previews the solid in real-time with Three.js, and exports industry-standard **STEP / STL / OBJ / DXF** CAD files.
 
-### 🔄 The Generation Pipeline
+### The Generation Pipeline
 
 <img src="assets/readme/pipeline.svg" alt="CADForge Self-Healing Execution Pipeline" width="100%"/>
 
@@ -35,7 +35,7 @@
 
 ---
 
-##  Interface Tour
+## Interface Tour
 
 <table>
 <tr>
@@ -78,7 +78,7 @@ API keys stay strictly inside your browser's `localStorage` and are sent transie
 
 ---
 
-##  Quickstart
+## Quickstart
 
 ### Prerequisites
 
@@ -135,7 +135,7 @@ Visit **[http://localhost:5173](http://localhost:5173)** in your browser!
 
 ---
 
-##  Supported AI Engines
+## Supported AI Engines
 
 CADForge provides a unified, direct HTTPS provider layer with zero third-party vendor SDK bloat:
 
@@ -151,7 +151,7 @@ CADForge provides a unified, direct HTTPS provider layer with zero third-party v
 
 ---
 
-##  Prompting & Incremental Iteration
+## Prompting & Incremental Iteration
 
 CADForge is designed for iterative, conversation-driven mechanical modeling:
 
@@ -164,7 +164,7 @@ Each prompt with an active model refines the existing CadQuery code while creati
 
 ---
 
-##  Sandbox Security Architecture
+## Sandbox Security Architecture
 
 Running AI-generated Python code requires strict isolation. CADForge implements multi-tiered containment:
 
@@ -182,7 +182,7 @@ Running AI-generated Python code requires strict isolation. CADForge implements 
 
 ---
 
-##  Testing
+## Testing
 
 Run the automated test suite covering sandbox security, code fence extraction, failure classification, and export serialization:
 
@@ -193,6 +193,6 @@ cd backend
 
 ---
 
-## 📄 License
+## License
 
 Distributed under the **MIT License**. See `LICENSE` for more information.
