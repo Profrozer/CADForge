@@ -1,0 +1,132 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 240" width="100%" role="img" aria-label="CADForge Generation Pipeline">
+  <defs>
+    <linearGradient id="pipeBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#050b18"/>
+      <stop offset="50%" stop-color="#091328"/>
+      <stop offset="100%" stop-color="#030710"/>
+    </linearGradient>
+
+    <pattern id="gridSubtle" width="24" height="24" patternUnits="userSpaceOnUse">
+      <path d="M 24 0 L 0 0 0 24" fill="none" stroke="#38bdf8" stroke-opacity="0.04" stroke-width="1"/>
+    </pattern>
+
+    <linearGradient id="blueGlow" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#818cf8"/>
+    </linearGradient>
+
+    <filter id="nodeGlow">
+      <feGaussianBlur stdDeviation="3.5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <style>
+      @keyframes dashMove {
+        to { stroke-dashoffset: -32; }
+      }
+      @keyframes pulseNode {
+        0%, 100% { transform: scale(1); opacity: 0.8; }
+        50% { transform: scale(1.08); opacity: 1; filter: drop-shadow(0 0 8px #38bdf8); }
+      }
+      @keyframes loopBack {
+        0% { stroke-dashoffset: 0; }
+        100% { stroke-dashoffset: 48; }
+      }
+      .flow-line { stroke-dasharray: 8 8; animation: dashMove 1.5s linear infinite; }
+      .retry-line { stroke-dasharray: 6 6; animation: loopBack 2s linear infinite; }
+      .stage-card { transition: all 0.3s ease; }
+    </style>
+  </defs>
+
+  <!-- Container Box -->
+  <rect width="1200" height="240" rx="12" fill="url(#pipeBg)" stroke="#1e293b" stroke-width="1.5"/>
+  <rect width="1200" height="240" rx="12" fill="url(#gridSubtle)"/>
+
+  <!-- Top Title Bar -->
+  <g transform="translate(30, 32)">
+    <circle cx="6" cy="0" r="4" fill="#38bdf8" filter="url(#nodeGlow)"/>
+    <text x="20" y="4" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="700" fill="#f8fafc" letter-spacing="1.5">SELF-HEALING EXECUTION PIPELINE</text>
+    <text x="320" y="4" font-family="'JetBrains Mono', monospace" font-size="11" fill="#64748b">// Sandboxed Python · OpenCASCADE · Dual Self-Correction Loop</text>
+  </g>
+
+  <!-- Flow Connectors Behind Nodes -->
+  <!-- 1 -> 2 -->
+  <line x1="220" y1="125" x2="270" y2="125" stroke="#38bdf8" stroke-width="2" class="flow-line"/>
+  <polygon points="274,125 266,120 266,130" fill="#38bdf8"/>
+
+  <!-- 2 -> 3 -->
+  <line x1="450" y1="125" x2="500" y2="125" stroke="#38bdf8" stroke-width="2" class="flow-line"/>
+  <polygon points="504,125 496,120 496,130" fill="#38bdf8"/>
+
+  <!-- 3 -> 4 -->
+  <line x1="680" y1="125" x2="730" y2="125" stroke="#38bdf8" stroke-width="2" class="flow-line"/>
+  <polygon points="734,125 726,120 726,130" fill="#38bdf8"/>
+
+  <!-- 4 -> 5 -->
+  <line x1="910" y1="125" x2="960" y2="125" stroke="#38bdf8" stroke-width="2" class="flow-line"/>
+  <polygon points="964,125 956,120 956,130" fill="#38bdf8"/>
+
+  <!-- Self-Correction Feedback Loop (Stage 4 to Stage 3) -->
+  <path d="M 820 168 L 820 195 Q 820 205 810 205 L 600 205 Q 590 205 590 195 L 590 168" fill="none" stroke="#f59e0b" stroke-width="1.8" class="retry-line"/>
+  <polygon points="590,165 585,173 595,173" fill="#f59e0b"/>
+  <rect x="645" y="193" width="120" height="22" rx="4" fill="#1e180a" stroke="#f59e0b" stroke-width="1"/>
+  <text x="705" y="208" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="9.5" font-weight="600" fill="#fbbf24">AUTORETRY (x2)</text>
+
+  <!-- ================= STAGE 1: PROMPT ================= -->
+  <g transform="translate(40, 70)" class="stage-card">
+    <rect width="180" height="98" rx="8" fill="#0b1329" stroke="#38bdf8" stroke-opacity="0.3" stroke-width="1.2"/>
+    <rect x="0" y="0" width="180" height="26" rx="8" fill="#132347"/>
+    <text x="14" y="17" font-family="'JetBrains Mono', monospace" font-size="10.5" font-weight="700" fill="#38bdf8">01 · USER INPUT</text>
+    <text x="14" y="48" font-family="'Inter', sans-serif" font-size="12" font-weight="600" fill="#f1f5f9">Natural Language</text>
+    <text x="14" y="66" font-family="'JetBrains Mono', monospace" font-size="10" fill="#94a3b8">"80x60 L-bracket with 2x 6mm holes"</text>
+    <rect x="14" y="76" width="60" height="14" rx="2" fill="#1e293b"/>
+    <text x="44" y="86" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="8" fill="#cbd5e1">Prompt</text>
+  </g>
+
+  <!-- ================= STAGE 2: SPEC NORMALIZATION ================= -->
+  <g transform="translate(270, 70)" class="stage-card">
+    <rect width="180" height="98" rx="8" fill="#0b1329" stroke="#38bdf8" stroke-opacity="0.3" stroke-width="1.2"/>
+    <rect x="0" y="0" width="180" height="26" rx="8" fill="#132347"/>
+    <text x="14" y="17" font-family="'JetBrains Mono', monospace" font-size="10.5" font-weight="700" fill="#38bdf8">02 · LLM SPEC</text>
+    <text x="14" y="48" font-family="'Inter', sans-serif" font-size="12" font-weight="600" fill="#f1f5f9">Structured Spec</text>
+    <text x="14" y="66" font-family="'JetBrains Mono', monospace" font-size="10" fill="#94a3b8">Dimensions, Features &amp; Assumptions JSON</text>
+    <rect x="14" y="76" width="70" height="14" rx="2" fill="#1e293b"/>
+    <text x="49" y="86" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="8" fill="#38bdf8">JSON Schema</text>
+  </g>
+
+  <!-- ================= STAGE 3: CODE SYNTHESIS ================= -->
+  <g transform="translate(500, 70)" class="stage-card">
+    <rect width="180" height="98" rx="8" fill="#0b1329" stroke="#38bdf8" stroke-opacity="0.5" stroke-width="1.4"/>
+    <rect x="0" y="0" width="180" height="26" rx="8" fill="#132347"/>
+    <text x="14" y="17" font-family="'JetBrains Mono', monospace" font-size="10.5" font-weight="700" fill="#38bdf8">03 · CADQUERY</text>
+    <text x="14" y="48" font-family="'Inter', sans-serif" font-size="12" font-weight="600" fill="#f1f5f9">Python Generation</text>
+    <text x="14" y="66" font-family="'JetBrains Mono', monospace" font-size="10" fill="#94a3b8">Parametric scripts with version diffing</text>
+    <rect x="14" y="76" width="75" height="14" rx="2" fill="#064e3b"/>
+    <text x="51" y="86" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="8" fill="#34d399">Pure Python</text>
+  </g>
+
+  <!-- ================= STAGE 4: SANDBOX EXECUTION ================= -->
+  <g transform="translate(730, 70)" class="stage-card">
+    <rect width="180" height="98" rx="8" fill="#0b1329" stroke="#f59e0b" stroke-opacity="0.5" stroke-width="1.4"/>
+    <rect x="0" y="0" width="180" height="26" rx="8" fill="#2d1e08"/>
+    <text x="14" y="17" font-family="'JetBrains Mono', monospace" font-size="10.5" font-weight="700" fill="#fbbf24">04 · SANDBOX (OCC)</text>
+    <text x="14" y="48" font-family="'Inter', sans-serif" font-size="12" font-weight="600" fill="#f1f5f9">Kernel Validation</text>
+    <text x="14" y="66" font-family="'JetBrains Mono', monospace" font-size="10" fill="#94a3b8">Isolated process · shape.isValid() check</text>
+    <rect x="14" y="76" width="85" height="14" rx="2" fill="#451a03"/>
+    <text x="56" y="86" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="8" fill="#f97316">Hard Timeout</text>
+  </g>
+
+  <!-- ================= STAGE 5: VIEWPORT & EXPORT ================= -->
+  <g transform="translate(960, 70)" class="stage-card">
+    <rect width="200" height="98" rx="8" fill="#0b1329" stroke="#22c55e" stroke-opacity="0.5" stroke-width="1.4"/>
+    <rect x="0" y="0" width="200" height="26" rx="8" fill="#082b18"/>
+    <text x="14" y="17" font-family="'JetBrains Mono', monospace" font-size="10.5" font-weight="700" fill="#4ade80">05 · THREE.JS &amp; EXPORT</text>
+    <text x="14" y="48" font-family="'Inter', sans-serif" font-size="12" font-weight="600" fill="#f1f5f9">Interactive 3D Solid</text>
+    <text x="14" y="66" font-family="'JetBrains Mono', monospace" font-size="10" fill="#94a3b8">Orbit / Pan / Zoom + Multi-format files</text>
+    <rect x="14" y="76" width="130" height="14" rx="2" fill="#14532d"/>
+    <text x="79" y="86" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="8" fill="#86efac">STEP · STL · OBJ · DXF</text>
+  </g>
+</svg>
